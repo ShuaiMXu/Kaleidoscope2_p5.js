@@ -35,7 +35,7 @@ void main() {
 		p.y -= u_center.y;
 		p.x *= iResolution.x / iResolution.y;
 
-		z += (1.0 / 3.0) * u_colorContrast;
+		z += (1.0 / noise2) * u_colorContrast;
 
 		l = length(p);
 		l*=l;

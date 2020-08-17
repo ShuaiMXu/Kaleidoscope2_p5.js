@@ -14,7 +14,7 @@ function preload(){
 }
 
 function centerCanvas() {
-  var x = (windowWidth - width) / 2;
+  var x = width * 0.4;
   var y = (windowHeight - height) / 2;
   cnv.position(500, 50);
   cnv.style('z-index','-2');
@@ -37,16 +37,13 @@ function setup() {
 
   noise1Slider = createSlider(10, 500, 100,1);
   noise1Slider.position(130, 85);
-  button = createButton("形态1");
+  button = createButton("亮度");
   button.position(30, 85);
 
-  noise2Slider = createSlider(0, 10, 1,0.01 );
+  noise2Slider = createSlider(1, 30, 5,0.5 );
   noise2Slider.position(130, 125);
-  button = createButton("形态2");
+  button = createButton("RGB 分离");
   button.position(30, 125);
-
-
-
 }
 
 function draw(){
@@ -55,7 +52,7 @@ function draw(){
 
   const noise1 = noise1Slider.value();
 
-
+  const noise2 = noise2Slider.value();
 
   // shader() sets the active shader with our shader
   shader(theShader);
